@@ -22,7 +22,7 @@ var cfapi = require('cfapi-client');
 
 Request projects from the API.
 
-The options object is optional and accepts these options:
+The options object is optional and accepts these properties:
 
 - **per_page:** _String_
   - The number of features to return on each page.
