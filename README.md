@@ -2,6 +2,14 @@
 
 A JS wrapper around the CFAPI that works in node & the browser.
 
+## Install
+
+```
+npm install --save cfapi-client
+```
+
+Use in the browser with [browserify](https://github.com/substack/node-browserify).
+
 ## Usage
 
 ```
