@@ -15,7 +15,7 @@ Use in the browser with [browserify](https://github.com/substack/node-browserify
 ## Usage
 
 ```
-var cfapi = require('cfapi');
+var cfapi = require('cfapi-client');
 ```
 
 ### cfapi.projects([options, ]callback);
