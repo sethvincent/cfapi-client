@@ -2,6 +2,8 @@
 
 A JS wrapper around the CFAPI that works in node & the browser.
 
+Learn more about CFAPI at [the docs](http://cfapi.readme.io/v1.0/docs) and at [the repo](https://github.com/codeforamerica/cfapi).
+
 ## Install
 
 ```
