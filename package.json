@@ -1,0 +1,23 @@
+{
+  "name": "cfapi-client",
+  "description": "a JS wrapper around the CFAPI that works in node & the browser",
+  "version": "1.0.0",
+  "repository": {
+    "url": "git://github.com/sethvincent/cfapi-client.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node example.js"
+  },
+  "browser": {
+    "request": "xhr"
+  },
+  "dependencies": {
+    "request": "^2.51.0",
+    "xhr": "^2.0.0"
+  },
+  "devDependencies": {
+    "tape": "^3.0.3"
+  }
+}
