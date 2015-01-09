@@ -2,7 +2,7 @@
 
 A JS wrapper around the CFAPI that works in node & the browser.
 
-Learn more about CFAPI at [the docs](http://cfapi.readme.io/v1.0/docs) and at [the repo](https://github.com/codeforamerica/cfapi).
+Learn more about CFAPI at [the docs](http://codeforamerica.org/api) and at [the repo](https://github.com/codeforamerica/cfapi).
 
 ## Install
 
@@ -46,6 +46,8 @@ cfapi.projects({ per_page: 5 }, function (err, res, body) {
 });
 ```
 
+Learn more about [the projects endpoint at the docs](http://codeforamerica.org/api/#api-projects).
+
 ### cfapi.orgs([options, ]callback);
 
 Request organizations (mostly Code for America brigades) from the API.
@@ -66,6 +68,8 @@ cfapi.orgs({ per_page: 1, type: 'brigade' }, function (err, res, body) {
   console.log(body);
 });
 ```
+
+Learn more about [the organizations endpoint at the docs](http://codeforamerica.org/api/#api-organizations).
 
 ### cfapi.organizations()
 
