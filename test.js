@@ -1,10 +1,25 @@
 var test = require('tape');
+var tapSpec = require('tap-spec');
 var cfapi = require('./index');
 
+test.createStream()
+  .pipe(tapSpec())
+  .pipe(process.stdout);
+
 test('get organizations', function (t) {
-  cfapi.orgs(function (err, res, body) {
-    t.ifError(err);
-    t.ok(body);
+  cfapi.orgs({ per_page: 3 }, function (err, res, body) {
+    t.ifError(err, "No errors");
+    t.ok(body, 200);
+    t.equal(body.objects.length, 3)
+    t.end();
+  });
+});
+
+test('get projects', function (t) {
+  cfapi.projects({ per_page: 2 }, function (err, res, body) {
+    t.ifError(err, "No errors");
+    t.ok(body, 200);
+    t.equal(body.objects.length, 2)
     t.end();
   });
 });
@@ -31,14 +46,6 @@ test('get labeled issue', function (t) {
     }
     t.ok(labels.some(hasHelpWantedLabel), "Returns help wanted label")
     t.ok(labels.some(hasBugLabel), "Returns bug label")
-    t.end();
-  });
-});
-
-test('get organizations', function (t) {
-  cfapi.projects(function (err, res, body) {
-    t.ifError(err);
-    t.ok(body);
     t.end();
   });
 });

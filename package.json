@@ -18,6 +18,7 @@
     "xhr": "^2.0.0"
   },
   "devDependencies": {
+    "tap-spec": "^2.2.0",
     "tape": "^3.0.3"
   }
 }
