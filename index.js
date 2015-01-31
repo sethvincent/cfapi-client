@@ -4,7 +4,8 @@ var qs = require('querystring');
 module.exports = {
   orgs: organizations,
   organizations: organizations,
-  projects: projects
+  projects: projects,
+  issues: issues
 };
 
 function organizations (opts, cb) {
@@ -15,6 +16,10 @@ function projects (opts, cb) {
   return req('projects', opts, cb);
 }
 
+function issues (opts, cb) {
+  return req('issues', opts, cb);
+}
+
 function req (resource, params, cb) {
   var uri = 'http://codeforamerica.org/api/' + resource;
   
@@ -23,8 +28,15 @@ function req (resource, params, cb) {
     params = null;
   }
   
-  if (params) uri += '?' + qs.stringify(params);
-  
+  if (params) {
+    if ("labels" in params) {
+      params.labels = params.labels.replace(", ", ",")
+      uri += '/labels/' + params.labels
+      delete params.labels
+    }
+    uri += '?' + qs.stringify(params);
+  }
+
   var opts = {
     uri: uri,
     method: 'GET',

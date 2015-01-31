@@ -75,6 +75,25 @@ Learn more about [the organizations endpoint at the docs](http://codeforamerica.
 
 Alias to `cfapi.orgs()`.
 
+### cfapi.issues([options, ], callback);
+
+Request issues from the CfAPI.
+
+The options object is optional and accepts these properties:
+
+- **per_page:** _Integer_
+  - The number of features to return on each page.
+- **labels:** _String_
+  - Only return Issues that have these labels
+
+Example usage:
+
+```
+cfapi.issues({ labels: "help wanted", per_page: 1 }, function (err, res, body) {
+  console.log(body);
+});
+```
+
 ## Contributing
 - Fork this repo
 - Make a branch for your changes
