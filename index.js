@@ -22,12 +22,12 @@ function issues (opts, cb) {
 
 function req (resource, params, cb) {
   var uri = 'http://codeforamerica.org/api/' + resource;
-  
+
   if (typeof params === 'function') {
     cb = params;
     params = null;
   }
-  
+
   if (params) {
     if ("labels" in params) {
       params.labels = params.labels.replace(", ", ",")
